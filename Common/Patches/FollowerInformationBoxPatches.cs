@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using HarmonyLib;
 
@@ -19,7 +19,7 @@ public class FollowerInformationBoxPatches
     [HarmonyPostfix]
     public static void ConfigureImpl([SuppressMessage("ReSharper", "InconsistentNaming")] FollowerInformationBox __instance)
     {
-        if (__instance.FollowerRole == null || __instance.FollowerInfo.OldAge || __instance.FollowerInfo.HasThought(Thought.OldAge) || __instance.followBrain.Info.CursedState == Thought.Child)
+        if (__instance.FollowerRole == null || __instance.FollowerInfo.OldAge || __instance.FollowerInfo.HasThought(Thought.OldAge) || __instance.FollowerInfo.CursedState == Thought.Child)
             return;
 
         string roleIcon = FontImageNames.IconForRole(__instance.followBrain?.Info.FollowerRole ?? __instance.FollowerInfo.FollowerRole);
