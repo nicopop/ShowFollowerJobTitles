@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using HarmonyLib;
@@ -10,14 +11,16 @@ namespace ShowFollowerJobTitles.Common.Patches;
 
 /// <summary>A class containing patches for <see cref="UIFollowerWheelInteractionItem" /></summary>
 [HarmonyPatch]
-public class UIFollowerWheelInteractionItemPatches {
+public class UIFollowerWheelInteractionItemPatches
+{
   /// <summary>The patch method for <see cref="UIFollowerWheelInteractionItem.Configure" />.</summary>
   /// <param name="__instance">The <see cref="UIFollowerWheelInteractionItem" /> instance.</param>
   /// <param name="follower">The follower.</param>
   /// <param name="commandItem">The command item.</param>
   [HarmonyPostfix]
-  [HarmonyPatch(typeof(UIFollowerWheelInteractionItem), nameof(UIFollowerWheelInteractionItem.Configure))]
-  public static void Configure([SuppressMessage("ReSharper", "InconsistentNaming")] UIFollowerWheelInteractionItem __instance, ref Follower follower, ref CommandItem commandItem) {
+    [HarmonyPatch(typeof(UIFollowerWheelInteractionItem), "Configure", new Type[] { typeof(Follower), typeof(CommandItem) })] //nameof(UIFollowerWheelInteractionItem.Configure))]
+    public static void Configure([SuppressMessage("ReSharper", "InconsistentNaming")] UIFollowerWheelInteractionItem __instance, ref Follower follower, ref CommandItem commandItem)
+    {
     if (commandItem == null || !commandItem.Command.IsFollowerRoleCommand())
       return;
 
@@ -32,7 +35,8 @@ public class UIFollowerWheelInteractionItemPatches {
     TextMeshProUGUI text = (TextMeshProUGUI)textInfo.GetValue(__instance);
 
     // highlight current role
-    if (followerRole == follower.Brain.Info.FollowerRole) {
+        if (followerRole == follower.Brain.Info.FollowerRole)
+        {
       // highlight the role icon in yellow (if available)
       if (commandItem.IsAvailable(follower))
         text.text = $"<color=yellow>{text.text}</color>";
@@ -43,7 +47,8 @@ public class UIFollowerWheelInteractionItemPatches {
     }
 
     // handle unavailable roles 
-    if (!commandItem.IsAvailable(follower)) {
+        if (!commandItem.IsAvailable(follower))
+        {
       // builder seems to work differently; add +1 count to unselectable roles other than builder
       titleFieldInfo.SetValue(__instance, $"{title} ({jobCount}{(followerRole == FollowerRole.Builder ? "" : " + 1")})");
       return;
