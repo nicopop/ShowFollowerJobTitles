@@ -1,4 +1,4 @@
-﻿namespace ShowFollowerJobTitles.Common.Extensions;
+namespace ShowFollowerJobTitles.Common.Extensions;
 
 /// <summary>A class containing extension methods for the <see cref="FollowerCommands" /> enum.</summary>
 public static class FollowerCommandsExtensions
