@@ -1,4 +1,4 @@
-# *Show Follower Job Titles Patched* Fork of the original Show Follower Job Titles mod [found here](https://github.com/f4iTh/ShowFollowerJobTitles)
+# *Show Follower Job Titles Continued* Fork of the original Show Follower Job Titles mod [found here](https://github.com/f4iTh/ShowFollowerJobTitles)
 
 The patches I did should work well enough to display the jobs icon in the world but there are no guarantee this is bug free.
 

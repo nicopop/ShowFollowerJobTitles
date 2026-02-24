@@ -5,7 +5,7 @@ using HarmonyLib;
 namespace ShowFollowerJobTitles;
 
 /// <summary>The plugin entry point.</summary>
-[BepInPlugin("com.f4iTh.COTL.ShowFollowerJobTitles", "Show Follower Job Titles Patched", "1.0.3")]
+[BepInPlugin("com.f4iTh.COTL.ShowFollowerJobTitles", "Show Follower Job Titles Continued", "1.0.3")]
 public class Plugin : BaseUnityPlugin
 {
     /// <summary>A static logger instance that can be used across the entire project.</summary>
