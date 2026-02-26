@@ -1,8 +1,13 @@
-# *Show Follower Job Titles Continued* Fork of the original Show Follower Job Titles mod [found here](https://github.com/f4iTh/ShowFollowerJobTitles)
+# *Show Follower Job Titles Continued*
+Fork of the original Show Follower Job Titles mod [found here on Github](https://github.com/f4iTh/ShowFollowerJobTitles)
 
-The patches I did should work well enough to display the jobs icon in the world but there are no guarantee this is bug free.
+This version **Should** work correctly on the latest version of the game (as of late february 2026) including the Woolhaven DLC
 
-Original description bellow:
+If you find any issues/bugs feel free to open an issue on [my github](https://github.com/nicopop/ShowFollowerJobTitles/tree/thunderstore)
+
+You just need to remember that I'm not the original Author of this mod and thus might not be able to fix everything.
+
+*Original description below:*
 
 ----
 
