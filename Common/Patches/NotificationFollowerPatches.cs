@@ -1,6 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using HarmonyLib;
+using ShowFollowerJobTitles.Common.Extensions;
 using TMPro;
 
 namespace ShowFollowerJobTitles.Common.Patches;
@@ -34,7 +35,7 @@ public class NotificationFollowerPatches
         if (notificationType != NotificationCentre.NotificationType.BecomeOld || description == null)
             return;
 
-        string roleIcon = FontImageNames.IconForRole(followerInfo.FollowerRole);
+        string roleIcon = FontImageNamesExtensions.GetIconForRole(followerInfo.FollowerRole);
         if (string.IsNullOrWhiteSpace(roleIcon))
             return;
 

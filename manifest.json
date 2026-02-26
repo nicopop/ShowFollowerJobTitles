@@ -1,7 +1,7 @@
 {
     "name": "ShowFollowerJobTitles_Continued",
     "description": "A mod that displays a follower's current job with its respective icon.",
-    "version_number": "1.0.3",
+    "version_number": "1.1.0",
     "dependencies": [ "BepInEx-BepInExPack_CultOfTheLamb-5.4.21" ],
     "website_url": "https://github.com/nicopop/ShowFollowerJobTitles"
 }

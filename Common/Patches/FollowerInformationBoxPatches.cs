@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using HarmonyLib;
+using ShowFollowerJobTitles.Common.Extensions;
 
 namespace ShowFollowerJobTitles.Common.Patches;
 
@@ -22,7 +23,7 @@ public class FollowerInformationBoxPatches
         if (__instance.FollowerRole == null || __instance.FollowerInfo.OldAge || __instance.FollowerInfo.HasThought(Thought.OldAge) || __instance.FollowerInfo.CursedState == Thought.Child)
             return;
 
-        string roleIcon = FontImageNames.IconForRole(__instance.followBrain?.Info.FollowerRole ?? __instance.FollowerInfo.FollowerRole);
+        string roleIcon = FontImageNamesExtensions.GetIconForRole(__instance.followBrain?.Info.FollowerRole ?? __instance.FollowerInfo.FollowerRole);
         if (string.IsNullOrWhiteSpace(roleIcon))
             return;
 

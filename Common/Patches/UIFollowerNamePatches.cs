@@ -1,7 +1,8 @@
+using HarmonyLib;
+using ShowFollowerJobTitles.Common.Extensions;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using HarmonyLib;
 using TMPro;
 
 namespace ShowFollowerJobTitles.Common.Patches;
@@ -28,7 +29,7 @@ public class UIFollowerNamePatches
 
         TMP_Text nameText = (TMP_Text)nameTextFieldInfo.GetValue(__instance);
         Follower follower = (Follower)followerFieldInfo.GetValue(__instance);
-        string roleIcon = FontImageNames.IconForRole(follower.Brain.Info.FollowerRole);
+        string roleIcon = FontImageNamesExtensions.GetIconForRole(follower.Brain.Info.FollowerRole);
         int roleIconIndex = nameText.text.IndexOf(roleIcon, StringComparison.Ordinal);
 
         // do not display role for old people or babies
