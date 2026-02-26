@@ -55,4 +55,31 @@ public static class FollowerCommandsExtensions
             _ => FollowerRole.Worker
         };
     }
+    /// <summary>Gets a <see cref="FollowerCommands" /> based on the value of <see cref="FollowerRole" />.</summary>
+    /// <param name="followerRole">The follower command.</param>
+    public static FollowerCommands FollowerRoleToCommand(FollowerRole followerRole)
+    {
+        return followerRole switch
+        {
+            FollowerRole.Worshipper => FollowerCommands.WorshipAtShrine,
+            FollowerRole.Lumberjack => FollowerCommands.CutTrees,
+            FollowerRole.Farmer => FollowerCommands.Farmer_2,
+            FollowerRole.Monk => FollowerCommands.Study,
+            FollowerRole.StoneMiner => FollowerCommands.ClearRubble,
+            FollowerRole.Builder => FollowerCommands.Build,
+            FollowerRole.Forager => FollowerCommands.ForageBerries,
+            FollowerRole.Chef => FollowerCommands.Cook_2,
+            FollowerRole.Janitor => FollowerCommands.Janitor_2,
+            FollowerRole.Refiner => FollowerCommands.Refiner_2,
+            FollowerRole.Undertaker => FollowerCommands.Undertaker,
+            FollowerRole.Bartender => FollowerCommands.Brew,
+            FollowerRole.Medic => FollowerCommands.Medic,
+            FollowerRole.Rancher => FollowerCommands.Rancher,
+            FollowerRole.Logistics => FollowerCommands.Logistics,
+            FollowerRole.Handyman => FollowerCommands.Handyman,
+            FollowerRole.TraitManipulator => FollowerCommands.TraitManipulator,
+            FollowerRole.RotstoneMiner => FollowerCommands.MineRotstone,
+            _ => FollowerCommands.None
+        };
+    }
 }
