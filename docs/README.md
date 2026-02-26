@@ -3,7 +3,7 @@ Fork of the original Show Follower Job Titles mod [found here on Github](https:/
 
 This version **Should** work correctly on the latest version of the game (as of late february 2026) including the Woolhaven DLC
 
-If you find any issues/bugs feel free to open an issue on [my github](https://github.com/nicopop/ShowFollowerJobTitles/tree/thunderstore)
+If you find any issues/bugs feel free to open an issue on [the github repo of this fork](https://github.com/nicopop/ShowFollowerJobTitles/issues)
 
 You just need to remember that I'm not the original Author of this mod and thus might not be able to fix everything.
 
