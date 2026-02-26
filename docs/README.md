@@ -1,5 +1,6 @@
-# *Show Follower Job Titles Continued*
-Fork of the original Show Follower Job Titles mod [found here on Github](https://github.com/f4iTh/ShowFollowerJobTitles)
+# Show Follower Job Titles Continued
+
+Fork of the original *Show Follower Job Titles* mod [found here on Github](https://github.com/f4iTh/ShowFollowerJobTitles)
 
 This version **Should** work correctly on the latest version of the game (as of late february 2026) including the Woolhaven DLC
 
@@ -13,7 +14,7 @@ You just need to remember that I'm not the original Author of this mod and thus 
 
 **Show Follower Job Titles** is a [Cult of the Lamb](https://www.cultofthelamb.com/) mod that displays a follower's current job with its respective icon. 
 
-![](./images/jobtitle.png)
+![](https://raw.githubusercontent.com/nicopop/ShowFollowerJobTitles/master/docs/images/jobtitle.png)
 
 ## Features
 
@@ -22,13 +23,13 @@ that specific job, there will be a total of `n + 1` followers with the job.
 
 In the case of the image below, assigning this follower the `Worship` job would mean that there will be `9 + 1 = 10` total worshippers.
 
-![](./images/jobassignment.png)
+![](https://raw.githubusercontent.com/nicopop/ShowFollowerJobTitles/master/docs/images/jobassignment.png)
 
 The name of the follower's current job will be highlighted in yellow. Most of the job icons will also be highlighted in yellow,
 but some might not be highlighted (lumberjack and miner, for example).
 
-![](./images/jobassignment-current.png)
+![](https://raw.githubusercontent.com/nicopop/ShowFollowerJobTitles/master/docs/images/jobassignment-current.png)
 
 The job icon should be shown in most situations, including follower lists.
 
-![](./images/followerlist.png)
+![](https://raw.githubusercontent.com/nicopop/ShowFollowerJobTitles/master/docs/images/followerlist.png)
