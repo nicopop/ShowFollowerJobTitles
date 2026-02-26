@@ -1,8 +1,15 @@
 # Update notes
 
+## 1.1.0
+
+*I probably should've used 1.1 for the Woolhaven update but I forgot.*
+
+- Added fallback for role that do not have icons in the font (ex. some of the new DLC roles like logistics)  
+so they instead use the icon for their command
+
 ## 1.0.3
 
-- Fixed compatibility with Woolhaven update
+- Fixed compatibility with the Woolhaven update
 
 ## 1.0.2
 
