@@ -1,0 +1,19 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Choose>
+    <!-- TODO: handle more paths -->
+    <When Condition="$(OS) == 'Windows_NT'">
+      <PropertyGroup>
+        <!-- registry -->
+        <GamePath Condition="!Exists('$(GamePath)')">$([MSBuild]::GetRegistryValueFromView('HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 1313140', 'InstallLocation', null, RegistryView.Registry64, RegistryView.Registry32))</GamePath>
+
+        <!-- steam library -->
+        <_SteamLibraryPath>$([MSBuild]::GetRegistryValueFromView('HKEY_CURRENT_USER\SOFTWARE\Valve\Steam', 'SteamPath', null, RegistryView.Registry32))</_SteamLibraryPath>
+        <GamePath Condition="!Exists('$(GamePath)') AND '$(_SteamLibraryPath)' != ''">$(_SteamLibraryPath)\steamapps\common\Cult of the Lamb</GamePath>
+
+        <!-- default steam path -->
+        <GamePath Condition="!Exists('$(GamePath)')">C:\Program Files\Steam\steamapps\common\Cult of the Lamb</GamePath>
+        <GamePath Condition="!Exists('$(GamePath)')">C:\Program Files (x86)\Steam\steamapps\common\Cult of the Lamb</GamePath>
+      </PropertyGroup>
+    </When>
+  </Choose>
+</Project>
