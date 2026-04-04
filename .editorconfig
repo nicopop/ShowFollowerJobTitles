@@ -1,18 +1,60 @@
-# https://EditorConfig.org
-
-# top-most EditorConfig file
 root = true
 
-[*.{cs,json}]
-indent_style = space
+[*]
 indent_size = 4
+indent_style = space
 charset = utf-8
+insert_final_newline = true
 trim_trailing_whitespace = true
-insert_final_newline = true
+max_line_length = off
 
-[*.md]
-indent_style = space
-indent_size = 4
-charset = utf-8
-trim_trailing_whitespace = false
-insert_final_newline = true
+[*.{md,csproj,json,targets}]
+indent_size = 2
+insert_final_newline = false
+
+[*.{gitattributes,gitignore}]
+insert_final_newline = false
+
+[*.cs]
+indent_size = 2
+
+# system usings first
+sort_usings_with_system_first = true
+
+# brace style
+type_declaration_braces = end_of_line
+anonymous_method_declaration_braces = end_of_line
+invocable_declaration_braces = end_of_line
+accessor_declaration_braces = end_of_line
+accessor_owner_declaration_braces = end_of_line
+csharp_accessor_declaration_braces = end_of_line
+case_block_braces = end_of_line
+initializer_braces = end_of_line
+other_braces = end_of_line
+empty_block_style = together_same_line
+
+# braces-related
+indent_inside_namespace = true
+allow_comment_after_lbrace = true
+
+# var usage / prefer explicit types
+csharp_style_var_for_built_in_types = false:error
+csharp_style_var_when_type_is_apparent = false:error
+csharp_style_var_elsewhere = false:error
+prefer_explicit_discard_declaration = true
+prefer_separate_deconstructed_variables_declaration = true
+
+# '.this'
+dotnet_style_qualification_for_event = true:error
+dotnet_style_qualification_for_field = true:error
+dotnet_style_qualification_for_method = true:error
+dotnet_style_qualification_for_property = true:error
+
+# member qualification
+instance_members_qualify_members = all
+instance_members_qualify_declared_in = base_class, this_class
+static_members_qualify_members = none
+
+# modifiers
+default_private_modifier = explicit
+default_internal_modifier = explicit
