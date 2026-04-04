@@ -480,3 +480,4 @@ fabric.properties
 thunderstore/
 releases/
 /lib/
+/build/
