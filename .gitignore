@@ -481,3 +481,6 @@ thunderstore/
 releases/
 /lib/
 /build/
+
+# local diff patches
+/patches/
