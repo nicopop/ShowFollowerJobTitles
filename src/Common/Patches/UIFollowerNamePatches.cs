@@ -26,7 +26,7 @@ public class UIFollowerNamePatches {
 
     TMP_Text nameText = (TMP_Text)nameTextFieldInfo.GetValue(__instance);
     Follower follower = (Follower)followerFieldInfo.GetValue(__instance);
-    string roleIcon = FontImageNamesExtensions.GetIconForRole(follower.Brain.Info.FollowerRole);
+    string roleIcon = follower.Brain.Info.FollowerRole.GetIconForRole();
     int roleIconIndex = nameText.text.IndexOf(roleIcon, StringComparison.Ordinal);
 
     // do not display role for old people or babies
