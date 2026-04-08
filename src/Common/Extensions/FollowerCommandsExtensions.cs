@@ -6,7 +6,7 @@ namespace ShowFollowerJobTitles.Common.Extensions;
 public static class FollowerCommandsExtensions {
   /// <summary>Whether the <see cref="FollowerCommands" /> is a <see cref="FollowerRole" /> command.</summary>
   /// <param name="followerCommand">The follower command.</param>
-  /// <returns><c>true</c> if <paramref name="followerCommand"/> results in a valid <see cref="FollowerRole"/>, otherwise <c>false</c></returns>
+  /// <returns><c>true</c> if <paramref name="followerCommand" /> results in a valid <see cref="FollowerRole" />, otherwise <c>false</c></returns>
   public static bool IsFollowerRoleCommand(this FollowerCommands followerCommand) {
     return followerCommand
       is FollowerCommands.WorshipAtShrine
@@ -31,7 +31,7 @@ public static class FollowerCommandsExtensions {
 
   /// <summary>Gets a <see cref="FollowerRole" /> based on the value of <see cref="FollowerCommands" />.</summary>
   /// <param name="followerCommand">The follower command.</param>
-  /// <exception cref="ArgumentOutOfRangeException"><paramref name="followerCommand"/> of type <see cref="FollowerCommands"/> does not result in a valid <see cref="FollowerRole"/></exception>
+  /// <exception cref="ArgumentOutOfRangeException"><paramref name="followerCommand" /> of type <see cref="FollowerCommands" /> does not result in a valid <see cref="FollowerRole" /></exception>
   public static FollowerRole FollowerCommandToRole(this FollowerCommands followerCommand) {
     return followerCommand switch {
       FollowerCommands.WorshipAtShrine => FollowerRole.Worshipper,

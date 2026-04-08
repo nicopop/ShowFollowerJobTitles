@@ -5,7 +5,7 @@ namespace ShowFollowerJobTitles.Common.Extensions;
 public static class FollowerRoleExtensions {
   /// <summary>Gets a <see cref="FollowerCommands" /> based on the value of <see cref="FollowerRole" />.</summary>
   /// <param name="followerRole">The follower command.</param>
-  /// <exception cref="ArgumentOutOfRangeException"><paramref name="followerRole"/> is not a valid <see cref="FollowerRole" />.</exception>
+  /// <exception cref="ArgumentOutOfRangeException"><paramref name="followerRole" /> is not a valid <see cref="FollowerRole" />.</exception>
   public static FollowerCommands FollowerRoleToCommand(this FollowerRole followerRole) {
     return followerRole switch {
       FollowerRole.Worshipper => FollowerCommands.WorshipAtShrine,

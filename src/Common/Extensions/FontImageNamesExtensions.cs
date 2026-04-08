@@ -1,5 +1,3 @@
-using System;
-
 namespace ShowFollowerJobTitles.Common.Extensions;
 
 /// <summary>A class containing extension methods for the <see cref="FontImageNames" /> class</summary>
