@@ -1,5 +1,9 @@
 # Update notes
 
+## 1.1.1
+
+- Fixed role icons not showing up for resurrected followers
+
 ## 1.1.0
 
 - Added fallback icons for roles (i.e., logistics) that do not have icons in the font

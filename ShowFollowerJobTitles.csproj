@@ -6,7 +6,7 @@
     <RootNamespace>ShowFollowerJobTitles</RootNamespace>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Description>A mod that displays a follower's current job with its respective icon.</Description>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
