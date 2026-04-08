@@ -1,15 +1,17 @@
 # Update notes
 
+## 1.1.1
+
+- Fixed role icons not showing up for resurrected followers
+
 ## 1.1.0
 
-*I probably should've used 1.1 for the Woolhaven update but I forgot.*
-
-- Added fallback for role that do not have icons in the font (ex. some of the new DLC roles like logistics)
-  so they instead use the icon for their command
+- Added fallback icons for roles (i.e., logistics) that do not have icons in the font
+  so they instead use the icon for their command (thanks [nicopop](https://github.com/nicopop)!)
 
 ## 1.0.3
 
-- Fixed compatibility with the Woolhaven update
+- Fixed compatibility with the Woolhaven update (thanks [nicopop](https://github.com/nicopop)!)
 
 ## 1.0.2
 

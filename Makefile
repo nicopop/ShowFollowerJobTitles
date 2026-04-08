@@ -4,7 +4,7 @@ TARGET_FRAMEWORK := netstandard2.1
 
 MOD_AUTHOR := f4iTh
 MOD_NAME := ShowFollowerJobTitles
-MOD_VERSION := 1.1.0
+MOD_VERSION := 1.1.1
 
 # TODO: figure out better way to handle; issue about system path env var
 7Z := C:\Program Files\7-Zip\7z.exe

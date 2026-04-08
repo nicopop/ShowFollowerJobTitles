@@ -26,11 +26,11 @@ public class UIFollowerNamePatches {
 
     TMP_Text nameText = (TMP_Text)nameTextFieldInfo.GetValue(__instance);
     Follower follower = (Follower)followerFieldInfo.GetValue(__instance);
-    string roleIcon = FontImageNamesExtensions.GetIconForRole(follower.Brain.Info.FollowerRole);
+    string roleIcon = follower.Brain.Info.FollowerRole.GetIconForRole();
     int roleIconIndex = nameText.text.IndexOf(roleIcon, StringComparison.Ordinal);
 
     // do not display role for old people or babies
-    if (follower.Brain.Info.OldAge || follower.Brain.HasThought(Thought.OldAge) || follower.Brain.Info.CursedState == Thought.Child) {
+    if (follower.Brain.Info.CursedState == Thought.OldAge || follower.Brain.HasThought(Thought.OldAge) || follower.Brain.Info.CursedState == Thought.Child) {
       // remove role string after becoming old
       if (roleIconIndex > 0)
         nameText.text = nameText.text.Remove(roleIconIndex, roleIcon.Length - 1);

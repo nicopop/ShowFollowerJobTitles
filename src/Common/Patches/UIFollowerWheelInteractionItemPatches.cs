@@ -11,7 +11,7 @@ namespace ShowFollowerJobTitles.Common.Patches;
 /// <summary>A class containing patches for <see cref="UIFollowerWheelInteractionItem" /></summary>
 [HarmonyPatch]
 public class UIFollowerWheelInteractionItemPatches {
-  /// <summary>The patch method for <see cref="UIFollowerWheelInteractionItem.Configure" />.</summary>
+  /// <summary>The patch method for <see cref="UIFollowerWheelInteractionItem.Configure(Follower, CommandItem)" />.</summary>
   /// <param name="__instance">The <see cref="UIFollowerWheelInteractionItem" /> instance.</param>
   /// <param name="follower">The follower.</param>
   /// <param name="commandItem">The command item.</param>
@@ -42,7 +42,7 @@ public class UIFollowerWheelInteractionItemPatches {
       return;
     }
 
-    // handle unavailable roles 
+    // handle unavailable roles
     if (!commandItem.IsAvailable(follower)) {
       // builder seems to work differently; add +1 count to unselectable roles other than builder
       titleFieldInfo.SetValue(__instance, $"{title} ({jobCount}{(followerRole == FollowerRole.Builder ? "" : " + 1")})");

@@ -1,11 +1,12 @@
-﻿using BepInEx;
+﻿using System.Reflection;
+using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
 
 namespace ShowFollowerJobTitles;
 
 /// <summary>The plugin entry point.</summary>
-[BepInPlugin("com.f4iTh.COTL.ShowFollowerJobTitles", "Show Follower Job Titles", "1.1.0")]
+[BepInPlugin("com.f4iTh.COTL.ShowFollowerJobTitles", "Show Follower Job Titles", "1.1.1")]
 public class Plugin : BaseUnityPlugin {
   /// <summary>A static logger instance that can be used across the entire project.</summary>
   internal static ManualLogSource StaticLogger;
@@ -21,6 +22,9 @@ public class Plugin : BaseUnityPlugin {
   /// <inheritdoc cref="Plugin.OnEnable" />
   private void OnEnable() {
     this._harmony.PatchAll();
+
+    foreach (MethodBase method in this._harmony.GetPatchedMethods())
+      StaticLogger.LogInfo($"patched {method.ReflectedType?.Name}::{method.Name}");
   }
 
   /// <inheritdoc cref="Plugin.OnDisable" />

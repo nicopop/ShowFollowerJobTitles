@@ -1,9 +1,12 @@
-﻿namespace ShowFollowerJobTitles.Common.Extensions;
+﻿using System;
+
+namespace ShowFollowerJobTitles.Common.Extensions;
 
 /// <summary>A class containing extension methods for the <see cref="FollowerCommands" /> enum.</summary>
 public static class FollowerCommandsExtensions {
   /// <summary>Whether the <see cref="FollowerCommands" /> is a <see cref="FollowerRole" /> command.</summary>
   /// <param name="followerCommand">The follower command.</param>
+  /// <returns><c>true</c> if <paramref name="followerCommand"/> results in a valid <see cref="FollowerRole"/>, otherwise <c>false</c></returns>
   public static bool IsFollowerRoleCommand(this FollowerCommands followerCommand) {
     return followerCommand
       is FollowerCommands.WorshipAtShrine
@@ -28,9 +31,11 @@ public static class FollowerCommandsExtensions {
 
   /// <summary>Gets a <see cref="FollowerRole" /> based on the value of <see cref="FollowerCommands" />.</summary>
   /// <param name="followerCommand">The follower command.</param>
+  /// <exception cref="ArgumentOutOfRangeException"><paramref name="followerCommand"/> of type <see cref="FollowerCommands"/> does not result in a valid <see cref="FollowerRole"/></exception>
   public static FollowerRole FollowerCommandToRole(this FollowerCommands followerCommand) {
     return followerCommand switch {
       FollowerCommands.WorshipAtShrine => FollowerRole.Worshipper,
+      // => FollowerRole.Worker,
       FollowerCommands.CutTrees => FollowerRole.Lumberjack,
       FollowerCommands.Farmer_2 => FollowerRole.Farmer,
       FollowerCommands.Study => FollowerRole.Monk,
@@ -40,6 +45,7 @@ public static class FollowerCommandsExtensions {
       FollowerCommands.Cook_2 => FollowerRole.Chef,
       FollowerCommands.Janitor_2 => FollowerRole.Janitor,
       FollowerCommands.Refiner_2 => FollowerRole.Refiner,
+      // => FollowerRole.Berries,
       FollowerCommands.Undertaker => FollowerRole.Undertaker,
       FollowerCommands.Brew => FollowerRole.Bartender,
       FollowerCommands.Medic => FollowerRole.Medic,
@@ -48,33 +54,8 @@ public static class FollowerCommandsExtensions {
       FollowerCommands.Handyman => FollowerRole.Handyman,
       FollowerCommands.TraitManipulator => FollowerRole.TraitManipulator,
       FollowerCommands.MineRotstone => FollowerRole.RotstoneMiner,
-      var _ => FollowerRole.Worker
-    };
-  }
-
-  /// <summary>Gets a <see cref="FollowerCommands" /> based on the value of <see cref="FollowerRole" />.</summary>
-  /// <param name="followerRole">The follower command.</param>
-  public static FollowerCommands FollowerRoleToCommand(FollowerRole followerRole) {
-    return followerRole switch {
-      FollowerRole.Worshipper => FollowerCommands.WorshipAtShrine,
-      FollowerRole.Lumberjack => FollowerCommands.CutTrees,
-      FollowerRole.Farmer => FollowerCommands.Farmer_2,
-      FollowerRole.Monk => FollowerCommands.Study,
-      FollowerRole.StoneMiner => FollowerCommands.ClearRubble,
-      FollowerRole.Builder => FollowerCommands.Build,
-      FollowerRole.Forager => FollowerCommands.ForageBerries,
-      FollowerRole.Chef => FollowerCommands.Cook_2,
-      FollowerRole.Janitor => FollowerCommands.Janitor_2,
-      FollowerRole.Refiner => FollowerCommands.Refiner_2,
-      FollowerRole.Undertaker => FollowerCommands.Undertaker,
-      FollowerRole.Bartender => FollowerCommands.Brew,
-      FollowerRole.Medic => FollowerCommands.Medic,
-      FollowerRole.Rancher => FollowerCommands.Rancher,
-      FollowerRole.Logistics => FollowerCommands.Logistics,
-      FollowerRole.Handyman => FollowerCommands.Handyman,
-      FollowerRole.TraitManipulator => FollowerCommands.TraitManipulator,
-      FollowerRole.RotstoneMiner => FollowerCommands.MineRotstone,
-      var _ => FollowerCommands.None
+      // var _ => FollowerRole.Worker
+      var _ => throw new ArgumentOutOfRangeException(nameof(followerCommand), followerCommand, "Given follower command does not return a valid FollowerRole")
     };
   }
 }

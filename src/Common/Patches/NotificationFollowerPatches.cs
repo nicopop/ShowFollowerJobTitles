@@ -32,7 +32,7 @@ public class NotificationFollowerPatches {
     if (notificationType != NotificationCentre.NotificationType.BecomeOld || description == null)
       return;
 
-    string roleIcon = FontImageNamesExtensions.GetIconForRole(followerInfo.FollowerRole);
+    string roleIcon = followerInfo.FollowerRole.GetIconForRole();
     if (string.IsNullOrWhiteSpace(roleIcon))
       return;
 
