@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using System.Reflection;
+using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
 
@@ -21,6 +22,9 @@ public class Plugin : BaseUnityPlugin {
   /// <inheritdoc cref="Plugin.OnEnable" />
   private void OnEnable() {
     this._harmony.PatchAll();
+
+    foreach (MethodBase method in this._harmony.GetPatchedMethods())
+      StaticLogger.LogInfo($"patched {method.ReflectedType?.Name}::{method.Name}");
   }
 
   /// <inheritdoc cref="Plugin.OnDisable" />
